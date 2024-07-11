@@ -17,8 +17,8 @@ export default function FAB({ theme, setTheme }) {
    animateFrom={"right"}
    style={[
     {
-     right: 16,
-     bottom: 16,
+     right: 20,
+     bottom: 50,
      position: "absolute",
      backgroundColor: activeTheme.fabBG.val,
     },
