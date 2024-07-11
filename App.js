@@ -1,9 +1,10 @@
 import Main from "./Main";
+import FAB from "./components/FAB";
 import { useFonts } from "expo-font";
 import { useEffect, useState } from "react";
 import { config } from "@tamagui/config/v3";
+import { PaperProvider } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { AnimatedFAB, PaperProvider } from "react-native-paper";
 import { radius, size, space, themes, zIndex } from "@tamagui/themes";
 import { createTamagui, TamaguiProvider, createTokens } from "tamagui";
 
@@ -27,15 +28,23 @@ const tamaguiConfig = createTamagui({
  themes: {
   light: {
    bg: tokens.color.white,
+   fabBG: tokens.color.black,
    color: tokens.color.black,
    btnBG: tokens.color.black,
    btnCol: tokens.color.white,
+   inverseBtnCol: "green",
+   darkModeIcon: "sunny-outline",
+   darkModeIconColor: tokens.color.white,
   },
   dark: {
    bg: tokens.color.black,
+   fabBG: tokens.color.white,
    color: tokens.color.white,
    btnBG: tokens.color.white,
    btnCol: tokens.color.black,
+   inverseBtnCol: "yellow",
+   darkModeIcon: "moon",
+   darkModeIconColor: tokens.color.black,
   },
  },
 });
@@ -66,24 +75,7 @@ export default function App() {
     }}
    >
     <Main />
-    <AnimatedFAB
-     label={"Label"}
-     visible={true}
-     variant="extended"
-     animateFrom={"right"}
-     iconMode={"static"}
-     style={[
-      {
-       right: 16,
-       bottom: 16,
-       position: "absolute",
-       backgroundColor: theme === "dark" ? "white" : "black",
-      },
-     ]}
-     color={theme === "dark" ? "black" : "white"}
-     icon={theme === "dark" ? "sunny-outline" : "moon"}
-     onPress={() => setTheme(theme === "light" ? "dark" : "light")}
-    />
+    <FAB theme={theme} setTheme={setTheme} />
    </PaperProvider>
   </TamaguiProvider>
  );
