@@ -24,21 +24,21 @@ export const tamaguiConfig = createTamagui({
  themes: {
   light: {
    bg: tokens.color.white,
-   fabBG: tokens.color.black,
    color: tokens.color.black,
    btnBG: tokens.color.black,
    btnCol: tokens.color.white,
-   darkModeIcon: "sunny-outline",
-   darkModeIconColor: tokens.color.white,
+   fabBG: tokens.color.black,
+   fabIcon: "sunny-outline",
+   fabIconColor: tokens.color.white,
   },
   dark: {
-   darkModeIcon: "moon",
    bg: tokens.color.black,
-   fabBG: tokens.color.white,
    color: tokens.color.white,
    btnBG: tokens.color.white,
    btnCol: tokens.color.black,
-   darkModeIconColor: tokens.color.black,
+   fabBG: tokens.color.white,
+   fabIcon: "moon",
+   fabIconColor: tokens.color.black,
   },
  },
 });
