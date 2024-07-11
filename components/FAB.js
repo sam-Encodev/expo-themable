@@ -23,9 +23,9 @@ export default function FAB({ theme, setTheme }) {
      backgroundColor: activeTheme.fabBG.val,
     },
    ]}
-   icon={activeTheme.darkModeIcon.val}
+   icon={activeTheme.fabIcon.val}
    onPress={() => handleButtonPress()}
-   color={activeTheme.darkModeIconColor.val}
+   color={activeTheme.fabIconColor.val}
   />
  );
 }
