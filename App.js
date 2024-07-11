@@ -36,8 +36,8 @@ const tamaguiConfig = createTamagui({
    darkModeIconColor: tokens.color.white,
   },
   dark: {
-      bg: tokens.color.black,
-      darkModeIcon: "moon",
+   darkModeIcon: "moon",
+   bg: tokens.color.black,
    fabBG: tokens.color.white,
    color: tokens.color.white,
    btnBG: tokens.color.white,
