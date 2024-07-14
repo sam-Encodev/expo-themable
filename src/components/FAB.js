@@ -4,6 +4,7 @@ import { AnimatedFAB } from "react-native-paper";
 export default function FAB({ theme, setTheme }) {
  const activeTheme = useTheme();
 
+ console.log({activeTheme})
  const handleButtonPress = () => {
   return setTheme(theme === "light" ? "dark" : "light");
  };
@@ -20,12 +21,12 @@ export default function FAB({ theme, setTheme }) {
      right: 20,
      bottom: 50,
      position: "absolute",
-     backgroundColor: activeTheme.fabBG.val,
+     backgroundColor: activeTheme.bg.val,
     },
    ]}
    icon={activeTheme.fabIcon.val}
    onPress={() => handleButtonPress()}
-   color={activeTheme.fabIconColor.val}
+   color={activeTheme.color.val}
   />
  );
 }
