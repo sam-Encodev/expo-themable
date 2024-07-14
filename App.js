@@ -3,12 +3,15 @@ import FAB from "./components/FAB";
 import { useFonts } from "expo-font";
 import { TamaguiProvider } from "tamagui";
 import { useEffect, useState } from "react";
+import { useColorScheme } from "react-native";
 import { tamaguiConfig } from "./utils/constants";
 import { PaperProvider } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+
 export default function App() {
- const [theme, setTheme] = useState("dark");
+ const colorScheme = useColorScheme();
+ const [theme, setTheme] = useState(colorScheme);
 
  const [loaded] = useFonts({
   Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
