@@ -1,7 +1,17 @@
 import { Text, View, useTheme } from "tamagui";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export function Curved({ children }) {
- return <>{children}</>;
+ const activeTheme = useTheme();
+ const insets = useSafeAreaInsets();
+ return (
+  <View
+   paddingTop={insets.top}
+   backgroundColor={activeTheme.bg}
+  >
+   {children}
+  </View>
+ );
 }
 
 function CurvedHeader() {
@@ -30,5 +40,5 @@ function CurvedView() {
  );
 }
 
-Curved.Header = CurvedHeader;
 Curved.View = CurvedView;
+Curved.Header = CurvedHeader;
