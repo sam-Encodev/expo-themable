@@ -4,7 +4,6 @@ import { AnimatedFAB } from "react-native-paper";
 export default function FAB({ theme, setTheme }) {
  const activeTheme = useTheme();
 
- console.log({activeTheme})
  const handleButtonPress = () => {
   return setTheme(theme === "light" ? "dark" : "light");
  };
