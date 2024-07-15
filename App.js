@@ -3,10 +3,11 @@ import { useFonts } from "expo-font";
 import FAB from "./src/components/FAB";
 import { TamaguiProvider } from "tamagui";
 import { useEffect, useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "react-native";
 import { PaperProvider } from "react-native-paper";
-import { useColorScheme, View } from "react-native";
-import { tamaguiConfig } from "./src/utils/constants";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { DARK, LIGHT, tamaguiConfig } from "./src/utils/constants";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
  return (
   <SafeAreaProvider>
    <TamaguiProvider config={tamaguiConfig} defaultTheme={theme}>
+    <StatusBar style={theme === LIGHT ? DARK : LIGHT} />
     <PaperProvider
      settings={{
       icon: (props) => <Ionicons {...props} />,

@@ -42,3 +42,6 @@ export const tamaguiConfig = createTamagui({
   },
  },
 });
+
+export const DARK = "dark";
+export const LIGHT = "light";

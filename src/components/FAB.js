@@ -1,16 +1,17 @@
 import { useTheme } from "tamagui";
 import { AnimatedFAB } from "react-native-paper";
+import { DARK, LIGHT } from "../utils/constants";
 
 export default function FAB({ theme, setTheme }) {
  const activeTheme = useTheme();
 
  const handleButtonPress = () => {
-  return setTheme(theme === "light" ? "dark" : "light");
+  return setTheme(theme === LIGHT ? DARK : LIGHT);
  };
 
  return (
   <AnimatedFAB
-  visible={true}
+   visible={true}
    label={"Label"}
    variant="extended"
    iconMode={"static"}
